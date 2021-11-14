@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+int main() {
+	setlocale(0, "");
+
+	cout << "[1]Введите знак: ";
+	char a;
+	cin >> a;
+
+	cout << "[2]Введите первое число: ";
+	float b;
+	cin >> b;
+
+	cout << "[3]Введите второе число: ";
+	float c;
+	cin >> c;
+
+	if (a == '+') {
+		cout << "[+] Ответ: " << b << " + " << c << " = " << b + c;
+	}
+	else if (a == '-') {
+		cout << "[-] Ответ: " << b << " + " << c << " = " << b - c;
+	}
+	else if (a == '*') {
+		cout << "[*] Ответ: " << b << " * " << c << " = " << b * c;
+	}
+	else if (a == '/' && c != 0) {
+		cout << "[/] Ответ: " << b << " * " << c << " = " << b / c;
+	}
+	else if (a == '%' && c != 0) {
+		cout << "[%] Ответ: " << b << " % " << c << " = " << (int)b % (int)c;
+	}
+	else {
+		cout << "Такого действия нет!";
+	}
+
+		return 0;
+
+}
