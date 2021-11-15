@@ -7,6 +7,7 @@ int main() {
 	cout << "[1]Линия\n";
 	cout << "[2]Квадрат\n";
 	cout << "[3]Прямоугольник\n";
+	cout << "[4]Треугольник\n";
 	cout << "[+]Выберите фигуру: \n";
 	int vibor;
 	cin >> vibor;
@@ -110,7 +111,7 @@ int main() {
 				cout << "\n";
 			}
 
-		
+
 			break;
 		}
 		default:
@@ -186,7 +187,63 @@ int main() {
 		}
 		break;
 	}
+	case 4:
+		system("cls");
+		cout << "[-]Фигура: Треугольник\n";
+		cout << "[1]Пустой Треугольник\n";
+		cout << "[2]Заполненый Треугольник\n";
+		
+		cout << "[-]Выберите тип: ";
+		int treyg;
+		cin >> treyg;
+		switch (treyg){
+		case 1:
+			system("cls");
+			int  size;
+			cout << "Размер Треугольника: ";
+			cin >> size;
+			system("cls");
+			char tex;
+			cout << "Текстура Треугольника: ";
+			cin >> tex;
+			system("cls");
+			for (int y = 0; y < size; y++) {
+				for (int x = 0; x < size; x++) {
+					if (x == (size / 2) + y || x == (size / 2) - y || y == size / 2) {
+						cout << tex << " ";
+					}
+					else {
+						cout << " .";
+					}
+				}
+				cout << endl;
+			}
+			Sleep(40);
+			break;
+		case 2:
+			system("cls");
+			int  size;
+			cout << "Размер Треугольника: ";
+			cin >> size;
+			system("cls");
+			char tex;
+			cout << "Текстура Треугольника: ";
+			cin >> tex;
+			system("cls");
+			for (int i = 0; i < size; i++) {
+				for (int j = 0; j < size - i; j++)
+					cout << " ";
+				for (int j = size - i; j < size = i; j++)
+					cout << tex;
+				for (int J = size + i + 1; j < size * 2 ; j++)
+					cout << "";
+				cout << "\n";
 
+			}
+			break;
+		default:
+			break;
+		}
 	default:
 		cout << "Нет такой фигуры";
 		break;
