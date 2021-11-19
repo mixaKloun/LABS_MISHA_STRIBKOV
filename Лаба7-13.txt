@@ -8,7 +8,8 @@ int main() {
 	cout << "[2]Квадрат\n";
 	cout << "[3]Прямоугольник\n";
 	cout << "[4]Треугольник\n";
-	cout << "[+]Выберите фигуру: \n";
+	cout << "[5]Крестик\n";
+	cout << "[+]Выберите фигуру: ";
 	int vibor;
 	cin >> vibor;
 	switch (vibor) {
@@ -191,12 +192,11 @@ int main() {
 		system("cls");
 		cout << "[-]Фигура: Треугольник\n";
 		cout << "[1]Пустой Треугольник\n";
-		cout << "[2]Заполненый Треугольник\n";
-		
+
 		cout << "[-]Выберите тип: ";
 		int treyg;
 		cin >> treyg;
-		switch (treyg){
+		switch (treyg) {
 		case 1:
 			system("cls");
 			int  size;
@@ -220,30 +220,57 @@ int main() {
 			}
 			Sleep(40);
 			break;
-		case 2:
-			system("cls");
-			int  size;
-			cout << "Размер Треугольника: ";
-			cin >> size;
-			system("cls");
-			char tex;
-			cout << "Текстура Треугольника: ";
-			cin >> tex;
-			system("cls");
-			for (int i = 0; i < size; i++) {
-				for (int j = 0; j < size - i; j++)
-					cout << " ";
-				for (int j = size - i; j < size = i; j++)
-					cout << tex;
-				for (int J = size + i + 1; j < size * 2 ; j++)
-					cout << "";
-				cout << "\n";
-
-			}
-			break;
 		default:
 			break;
 		}
+	case 5:
+		system("cls");
+		int  size;
+		cout << "Вы выбрали фигуру Крестик\n";
+		cout << "Размер Крестика: ";
+		cin >> size;
+		system("cls");
+		char tex;
+		cout << "Текстура Крестика: ";
+		cin >> tex;
+		system("cls");
+		for (int y = 0; y < size; y++) {
+			cout << "\t";
+			for (int x = 0; x < size; x++) {
+				if (x == y && y != 0 || x == size - y) {
+					cout << tex << " ";
+				}
+				else {
+					cout << " .";
+				}
+			}
+			cout << "\n";
+		}
+		break;
+	case 6:
+		system("cls");
+		cout << "Вы выбрали фигуру Плюсик\n";
+		int  size;
+		cout << "Размер (нечетные числа)\n";
+		cout << "Размер Плюсика: ";
+		cin >> size;
+		system("cls");
+		char tex;
+		cout << "Текстура Плюсика: ";
+		cin >> tex;
+		system("cls");
+		for (int y = 0; y < size; y++) {
+			for (int x = 0; x < size; x++) {
+				if (y == size/2 || x == size/2) {
+					cout << tex << " ";
+				}
+				else {
+					cout << " .";
+				}
+			}
+			cout << "\n";
+		}
+		break;
 	default:
 		cout << "Нет такой фигуры";
 		break;
